@@ -1,7 +1,15 @@
-all: bcmp
+all: bcmp testdiff
 
 bcmp: bcmp.o
-	gcc bcmp.o  -o bcmp
+	gcc bcmp.c  -o bcmp
 
 bcmp.o: bcmp.c
 	gcc -c bcmp.c
+
+testdiff: testdiff.o diff.o
+
+testdiff.o: testdiff.c diff.h
+diff.o: diff.c diff.h
+
+clean:
+	rm *.o

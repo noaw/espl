@@ -22,26 +22,39 @@ int main(int argc, char **argv) {
 	  
 	
 	int j;
-	char a[129];
-	char b[129];
+	char a[1];
+	char b[1];
 	int row = 1;
+	int count = 1;
+	char *char1;
 	
-	while (fgets(a, sizeof(a), file1) != NULL){
-		fgets(b,sizeof(b), file2);
-		//printf(a);
-	        //printf(b);
-		//printf("row num: %d \n",row);
-		//for (j=0; j<=sizeof(a); j++){
-		for (j=0; j<=10; j++){
-		  //printf("%c %c \n",a[j],b[j]);
-		  if (a[j]!=b[j]){
-		    printf("byte %d %s %s",j,a[j],b[j]);
-		    //j = sizeof(a)+1;
-		    j = 11;
+	/*
+	fseek(file1, 0L, SEEK_END);
+	int end1 = ftell(file1);
+	fseek(file2, 0L, SEEK_END);
+	int end2 = ftell(file2);
+	printf("1: %d , 2: %d\n",end1,end2);
+	int minend = end1;
+	if (end2<end1)
+	  minend = end2;
+	*/
+	int minend=27;
+
+	
+	//fread(a, sizeof(char), 1, file1);
+	
+	while (count<minend) {
+	    fgets(a, sizeof(a), file1);
+	    fgets(b, sizeof(b), file2);
+	    printf("%d: a: %c - b: %c\n",count,a[1],b[1]);
+		 if (a[1]!=b[1]){
+		    printf("byte %d -%s +%s\n",count,a,b);
+		  
 		}
-	}
-	row=row+1;
-	}
+	  count++;
+	 }
+	 
+	
 	
 	printf("\n");
 	return 1;

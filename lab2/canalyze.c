@@ -5,6 +5,13 @@
 #include <string.h>
 #include <assert.h>
 
+int cmp_by_name(const void *a, const void *b) 
+{ 
+    const struct namestat *ia = (const struct namestat *)a;
+    const struct namestat *ib = (const struct namestat *)b;
+    return strcmp((*ia).name, (*ib).name);
+} 
+
 int main(int argc, char **argv) {
   
   
@@ -53,10 +60,7 @@ int main(int argc, char **argv) {
 	  fclose(file);
 	}
 	
-	char nl1[nl->size][20];
-	for(i = 0; i!=nl->size; ++i) {
-	  nl1[i] = nl[i];
-	}
+	qsort(nl->names, nl->size, sizeof(struct namestat), cmp_by_name);
 	printf("Here is the list: \n");
 	for(i = 0; i!=nl->size; ++i) {
 	  printf("%s %d\n",nl->names[i].name,nl->names[i].count);

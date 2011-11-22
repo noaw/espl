@@ -20,42 +20,21 @@ int main(int argc, char **argv) {
       return 1;
     }
 	  
+	int count = 0;
+	char a = 'a';
+	char b = 'b';
 	
-	int j;
-	char a[1];
-	char b[1];
-	int row = 1;
-	int count = 1;
-	char *char1;
-	
-	/*
-	fseek(file1, 0L, SEEK_END);
-	int end1 = ftell(file1);
-	fseek(file2, 0L, SEEK_END);
-	int end2 = ftell(file2);
-	printf("1: %d , 2: %d\n",end1,end2);
-	int minend = end1;
-	if (end2<end1)
-	  minend = end2;
-	*/
-	int minend=27;
-
-	
-	//fread(a, sizeof(char), 1, file1);
-	
-	while (count<minend) {
-	    fgets(a, sizeof(a), file1);
-	    fgets(b, sizeof(b), file2);
-	    printf("%d: a: %c - b: %c\n",count,a[0],b[0]);
-		 if (a[0]!=b[0]){
-		    printf("byte %d -%s +%s\n",count,a,b);
-		  
+	while (!(feof(file1)) | !(feof(file2))) {
+	    fread(&a, 1, 1, file1);
+	    fread(&b, 1, 1, file2);
+	     if (a!=b){
+		printf("byte %d -%d +%d\n",count,a,b);  
 		}
 	  count++;
 	 }
 	 
+	fclose(file1);
+	fclose(file2);
 	
-	
-	printf("\n");
 	return 1;
 }

@@ -59,23 +59,33 @@ int main(int argc, char **argv) {
   
 	char a[129];
 	char *difLine;
+	char b = 'b';
 	
 	while ((difLine = fgets(a, 129, bcmp)) != NULL){
 	      fputdiff(stdin, parsediff(difLine, &diff));
 	      fseek(file, diff.offset, 0);
-	      if (rflag==0){		
-		fputc(diff.new, file);
-		if (mflag==1)
-		  printf("replaced \'%c\' with \'%c\' on place %ld\n",diff.old,diff.new,diff.offset);
+	      fread(&b,1,1,file);
+	      fseek(file, diff.offset, 0);
+	      if (rflag==0){
+		if (b==diff.old){
+		  fputc(diff.new, file);
+		  if (mflag==1)
+		    printf("replaced \'%c\' with \'%c\' on place %ld\n",diff.old,diff.new,diff.offset);
+		}
+		else printf("no replacement: \'%c\' instead of \'%c\' on place %ld\n",b,diff.old,diff.offset);
 	      }
 	      else {
+		if (b==diff.new){
 		fputc(diff.old, file);
-		if (mflag==1)
-		  printf("replaced \'%c\' with \'%c\' on place %ld\n",diff.new,diff.old,diff.offset);
+		  if (mflag==1)
+		    printf("replaced \'%c\' with \'%c\' on place %ld\n",diff.new,diff.old,diff.offset);
+		}
+		else printf("no replacement: \'%c\' instead of \'%c\' on place %ld\n",b,diff.new,diff.offset);
 	      }      
 	}
 	
 	fclose(bcmp);
 	fclose(file);
+	
 	return 1;
 }

@@ -13,46 +13,22 @@ int main(int argc, char **argv) {
 	FILE * bcmp = NULL;
 
 	
-   if ((file = fopen(file1, "w")) == NULL){
+   if ((file = fopen(file1, "r+")) == NULL){
       printf("No file \n");
       return 1;
     }
-    
-    fclose(file);
 
 	
    if ((bcmp = fopen(file2, "r")) == NULL){
       printf("No bcmp-file \n");
       return 1;
     }
-	  
-	
-	int j;
-	int row = 1;
-	int count = 1;
-	char *char1;
-	
-	/*
-	fseek(file1, 0L, SEEK_END);
-	int end1 = ftell(file1);
-	fseek(file2, 0L, SEEK_END);
-	int end2 = ftell(file2);
-	printf("1: %d , 2: %d\n",end1,end2);
-	int minend = end1;
-	if (end2<end1)
-	  minend = end2;
-	*/
-	int minend=27;
-
-	
-	//fread(a, sizeof(char), 1, file1);
-	 
+    
+	 struct diff diff;
 	 int rflag = 0;
 	 int mflag = 0;
 	 int c;
-	 opterr = 0;
-
-	 
+	 opterr = 0;	 
 
 	 
       while ((c = getopt (argc, argv, "hrm")) != -1)
@@ -82,20 +58,24 @@ int main(int argc, char **argv) {
            }
   
 	char a[129];
+	char *difLine;
 	
-	while (fgets(a, sizeof(a), bcmp) != NULL){
-	      struct diff diff;
-	      fputdiff(stdout, parsediff(a, &diff));
-	      file = fopen(file1, "w");
-	      fseek(file, diff.offset, SEEK_SET);
-	      //char *new = diff.new;
-	      fwrite("X", 1, 1, file);
-	      fclose(file);
-	      
+	while ((difLine = fgets(a, 129, bcmp)) != NULL){
+	      fputdiff(stdin, parsediff(difLine, &diff));
+	      fseek(file, diff.offset, 0);
+	      if (rflag==0){		
+		fputc(diff.new, file);
+		if (mflag==1)
+		  printf("replaced \'%c\' with \'%c\' on place %ld\n",diff.old,diff.new,diff.offset);
+	      }
+	      else {
+		fputc(diff.old, file);
+		if (mflag==1)
+		  printf("replaced \'%c\' with \'%c\' on place %ld\n",diff.new,diff.old,diff.offset);
+	      }      
 	}
 	
 	fclose(bcmp);
-	
-	printf("\n");
+	fclose(file);
 	return 1;
 }

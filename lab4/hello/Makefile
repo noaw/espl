@@ -1,5 +1,5 @@
 %.o: %.asm
-%	nasm -g -f elf -o $@ $<
+	nasm -g -f elf -o $@ $<
 
 .PHONY: clean all
 

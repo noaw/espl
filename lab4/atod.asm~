@@ -1,0 +1,5 @@
+section .text
+global atod
+atod:
+	push ebp
+	mov ebp, esp

@@ -1,0 +1,14 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <getopt.h>
+
+
+int hsvmhr(char*,char*);
+
+int main(int argc, char **argv) {
+  
+	printf("%d\n", hsvmhr("00","11"));
+	
+	
+	return 1;
+}

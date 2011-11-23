@@ -8,7 +8,9 @@ int atod(char *a){
  int i;
  int length = strlen(a);
  for (i=0; i<length; i++){
-   ans = ans*10 + (a[i]-'0');
+   ans = ans*10;
+   ans = ans + (a[i]);
+   ans = ans - '0';
  }
  return ans;
 }

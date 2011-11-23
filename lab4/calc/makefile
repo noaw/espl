@@ -1,3 +1,6 @@
+%.o: %.asm
+	nasm -g -f elf -o $@ $<
+
 .PHONY: all clean
 
 all: calc1
@@ -7,13 +10,6 @@ calc1: calc1.o atod.o
 
 calc1.o: calc1.c
 	gcc -m32 -c calc1.c
-
-atod.o: atod.c
-	gcc -c -m32 -S -masm=intel atod.c
-#	gcc -m32 -c atod.c
-
-#atod.s: atod.c
-	
 
 clean:
 	rm *.o calc1

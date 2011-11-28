@@ -18,7 +18,7 @@ int main(int argc, char **argv) {
 	switch(op) {
 	case '+': c = a + b; break;
 	case '-': c = a - b; break;
-	case '*': c = a * b; break;
+	case '$': c = a * b; break;
 	case '/': c = a / b; break;
 	default: assert(0);
 	}

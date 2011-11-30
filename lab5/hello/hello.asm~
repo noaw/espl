@@ -9,7 +9,7 @@ _start:					;tell linker entry point
 	mov 	ebp, esp
 	push 	msg
 	call	length
-	mov	eax, edx
+	mov	edx, eax
 	mov	ecx,msg	;message to write
 	mov	ebx,1	;file descriptor (stdout)
 	mov	eax,4	;system call number (sys_write)

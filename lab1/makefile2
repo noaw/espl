@@ -1,0 +1,6 @@
+prsym: prsym.o font.o
+	gcc -o $@ $<
+pysym.o: prsym.c font.o
+	gcc -c -o prsym.o prsym.c
+font.o: font.c
+	gcc -c -o font.o font.c

@@ -11,6 +11,9 @@ all: ascart
 ascart: start.o ascart.o font.o write.o length.o printSpaceLine.o
 	ld -melf_i386 -g -o $@ $^
 
+try: try.o
+	ld -melf_i386 -g -o $@ $^
+
 #ascme: ascme.o ascart.o font.o write.o
 #	ld -melf_i386 -g -o $@ $^
 
@@ -27,6 +30,7 @@ write.o: write.asm
 start.o: start.asm
 length.o: length.asm
 printSpaceLine.o: printSpaceLine.asm
+try.o: try.asm
 
 clean:
 	rm *.o ahalan

@@ -5,6 +5,7 @@
 int write(int,const char*,int);
 int length(char *s);
 int printme(char* sp);
+int main(int,char*,char*);
 
 int ascart(int argc, char *argv[]){
     int i;
@@ -12,12 +13,13 @@ int ascart(int argc, char *argv[]){
     int iline;
     int pline;
     char *(*space)[SYMBOL_HEIGHT] = &alphabet[0];
+    main(argc,argv,SYMBOL_HEIGHT);
     //loop for each line
     for (pline=0; pline<=SYMBOL_HEIGHT; pline++){
       //loop for each argument
       for (i=0;i<argc-1;i++){
 	//loop for each char at argument
-	for (j=0; j<length(argv[i]); j++){
+	for (j=0; j<length(argv[i+1]); j++){
 	  innerFunction(i+1,j,argv,pline,SYMBOL_HEIGHT);
 	}
 	printme((*space)[pline]);

@@ -8,7 +8,7 @@
 
 all: ascart
 
-ascart: start.o ascart.o font.o write.o length.o printSpaceLine.o main.o
+ascart: start.o ascart.o font.o write.o length.o printSpaceLine.o main.o calculateIndex.o
 	ld -melf_i386 -g -o $@ $^
 
 #ascme: ascme.o ascart.o font.o write.o
@@ -28,6 +28,7 @@ start.o: start.asm
 length.o: length.asm
 printSpaceLine.o: printSpaceLine.asm
 main.o: main.asm
+calculateIndex.o: calculateIndex.asm
 
 clean:
 	rm *.o ahalan

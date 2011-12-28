@@ -1,25 +1,10 @@
-all: bcmp bfix testdiff
+all: bcmp bfix testdiff dir
 
-bcmp: bcmp.o
-	gcc bcmp.c  -o bcmp
+runprog: runprog.o
+	gcc runprog.c  -o runprog
 
-bcmp.o: bcmp.c
-	gcc -c bcmp.c
-
-bfix: bfix.o diff.o
-	gcc bfix.c diff.c -o bfix
-
-bfix.o:	bfix.c
-	gcc -c bfix.c
-
-diff.o: diff.c
-	gcc -c diff.c
-
-testdiff: testdiff.o diff.o
-
-testdiff.o: testdiff.c diff.h
-diff.o: diff.c diff.h
-
+runprog.o: runprog.c
+	gcc -c runprog.c
 
 clean:
 	rm *.o

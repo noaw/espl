@@ -12,15 +12,23 @@ int main(int argc, char **argv){
   pid_t cpid;
   int status;
 
-  /*
+  
    cpid = fork();
+   /*
    if (cpid == -1) {
      perror("fork");
      exit(EXIT_FAILURE);
    }
    */
-   execvp(argv[1],argv);
-   wait(&status);
-   printf("exit code: %ld\n", (long)status);
+   
+   if (cpid){
+    wait(&status);
+    printf("exit status: %ld\n", (long)status);
+   }
+   else {
+    execvp(argv[1],argv+1);
+    printf("running error");
+   } 
 
+  return 1;
 }

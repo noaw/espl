@@ -1,7 +1,10 @@
 #!/bin/sh
 
-for a in `find . -name "*.c"|xargs grep main -wl`; do
-	echo $a
-	echo "============="
-	grep  -n -A 4 main $a
-done
+echo $path
+x=`ls`
+find . -type f >a
+for 
+
+
+
+chmod +X findfam

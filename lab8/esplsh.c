@@ -99,63 +99,93 @@ void run_program() {
   int pid, status;
   static char ststr[8];
   int pindex = -1;
-  int i = 0;
+  int id = 1;
+  int i;
+  char check = 'a';
+  int p[2];
 
   /* TODO: input, output redirection */
   /* TODO: pipelines */
   /* TODO: background commands */
   
+  
    for (i=0; i<argc; i++){
-     if (!strcmp(argv[i],"|")){
+     if (argv[i][0]=='|'){
 	pindex = i;
+	check = '|';
 	break;
       }
    }
     
     
-    if (pindex > -1){
-     printf("found | in index %d",pindex); 
+    if (check=='|'){
+      //printf("found | in index %d\n",pindex);     
+      if (pipe(p)) {
+	printf("error in pipe");
+      }
+      if ((id=fork())==0) {
+	dup2 (p[0],0);
+	execvp(argv[pindex], argv+pindex+1);
+      }
     }
     
+  //printf("still here\n");
 
-  if((pid=fork())>0) {
+  if ((pindex==-1) && (argc>2)){
+    check = argv[argc-2][0];
+    //printf("changing pindex to %d\n",check);
+  }
+
+  //printf("still here2\npindex is: %d\n",pindex);
+
+ if(((pid=fork())>0) & (id>0)) {
     waitpid(pid, &status, 0);
     sprintf(ststr, "%d", status);
     setenv("?", ststr, 1);
-  } else if(pid==0) {
+  }
+  else if(pid==0) {
+  
+    //printf("inside before\n");
     
-    
-    if (pindex > -1){
-     printf("I'm here!!"); 
+    if (check=='|'){
+     //printf("I'm here!!");
+     int outputfd = p[1];
+     if (dup2(outputfd,1))
+	argv[pindex]=NULL;
     }
     
-    if (!strcmp(argv[argc-2],">")){ 
-      printf("found >\n");
-      int f = open(argv[argc-1],O_WRONLY | O_TRUNC | O_CREAT,0644);
-      close(1);
-      printf("fff %d\n", f);
-      argv[argc-2] = NULL;
+    
+    else if (check=='>'){ 
+      //printf("found >\n");
+      int f = open(argv[argc-1],O_WRONLY | O_TRUNC | O_CREAT,0777);
+      //close(1);
+      //printf("fff %d\n", f);
       dup2(f,1);
-    }
-    
-    if (!strcmp(argv[argc-2],"<")){  
-      printf("found <\n");
-      int f = open(argv[argc-1],O_RDONLY);
-      close(0);
-      printf("fff %d\n", f);
       argv[argc-2] = NULL;
-      dup2(f,0);
     }
     
+    
+    else if (check='<'){  
+      // printf("found <\n");
+      int f = open(argv[argc-1],O_RDONLY);
+      //close(0);
+      //printf("fff %d\n", f);
+      dup2(f,0);
+      argv[argc-2] = NULL;
+    }
+    
+ 
+ 
     execvp(argv[0], argv);
     perror(argv[0]);
+    
   } else {
     perror(getenv("SHELL")); /* problem while forking, not due to a particular program */
   }
 }
 
 int main(int _argc, char **_argv) {
-  /* clear shell variables and  re-assign a minimum set */
+  /* clear shell variables and re-assign a minimum set */
   clearenv();
   setenv("PATH", ":/bin:/usr/bin", 1);
   setenv("PROMPT", "$ ", 1);

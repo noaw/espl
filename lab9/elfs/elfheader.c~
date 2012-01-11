@@ -1,0 +1,112 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <getopt.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <elf.h>
+
+#define EI_INDENT 16
+
+/*
+typedef unsigned short ELF32_Half;
+typedef unsigned int ELF32_Addr;
+typedef unsigned int ELF32_Off;
+typedef unsigned int ELF32_Word;
+
+typedef struct {
+  unsigned char	e_ident[EI_INDENT];
+  ELF32_Half e_type;
+  ELF32_Half emachine;
+  ELF32_Word e_version;
+  ELF32_Addr e_entry;
+  ELF32_Off e_phoff;
+  ELF32_Off e_shoff;
+  ELF32_Word e_flags;
+  ELF32_Half e_ehsize;
+  ELF32_Half e_phentsize;
+  ELF32_Half e_phnum;
+  ELF32_Half e_shentsize;
+  ELF32_Half e_shnum;
+  ELF32_Half e_shstrndx;
+} ELF32_Ehdr;
+*/
+
+int main(int argc, char **argv) {
+  int c;
+  int sec_flag = 0;
+  int sym_flag = 0;
+  
+  while ((c = getopt (argc, argv, "Ss")) != -1)
+    switch (c)
+      {
+      case 'S':
+	sec_flag = 1;
+	break;
+      case 's':
+	sym_flag = 1;
+	break;
+      case '?': 
+	  if (optopt == 'c')
+	    fprintf (stderr, "Option -%c requires an argument.\n", optopt);
+	  else if (isprint (optopt))
+	    fprintf (stderr, "Unknown option `-%c'.\n", optopt);
+	  else
+	    fprintf (stderr,
+		    "Unknown option character `\\x%x'.\n",
+		    optopt);
+	  return 1;
+	default:
+	  abort ();
+           }
+  
+  int f1;
+  
+  Elf32_Ehdr elf;
+  Elf32_Shdr res;
+
+  f1 = open(argv[optind], O_RDONLY);
+  if(f1==-1) {
+     perror(argv[optind]);
+     exit(1);
+  }
+  read(f1, &elf, sizeof(elf));
+  int i;
+  Elf32_Off loc = elf.e_shoff;
+  printf("loc is: %d\n",loc);
+  
+  
+  if (sec_flag==1){
+    printf("Section headers - numer of sections is %d:\n",elf.e_shnum);
+    printf("[Nr] Name            Addr        Size\n");
+    lseek(f1,loc,0);
+    //for(i=0; i<elf.e_shnum; i++){
+    for(i=0; i<5; i++){
+      read(f1,res,sizeof(res));
+      printf("%x %x\n",res.sh_addr,res.sh_size);
+      loc = loc + res.sh_addr;
+      printf("loc is: %d\n",loc);
+    }
+    
+    
+    //fread(&loc,1,sizeof(loc),file1);
+    //printf("%x",loc);
+    //printf("%d\n", elf.e_shstrndx[1]);
+    /*
+    for(i=0; i<elf.e_shnum; i++){
+		//printf("%x ", elf.e_ident[i]);
+		printf("%d ",i);
+    }
+    */
+  }
+  
+  /*
+    if (sym_flag==1){
+	  
+    }
+  */
+
+  close(f1);
+  
+}

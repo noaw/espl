@@ -1,0 +1,6 @@
+#!/bin/sh
+
+for a in `cat x.txt`; do
+
+	echo $a
+done

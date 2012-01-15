@@ -41,6 +41,7 @@ int main(int argc, char **argv) {
   
   Elf32_Ehdr elf;
   Elf32_Shdr res;
+  int use;
   
   FILE * f1 = NULL;
 	
@@ -65,7 +66,7 @@ int main(int argc, char **argv) {
   //strcmp(names,name)==0
   
   // print details
-  printf("\nMagic: ");
+  printf("Magic: ");
   for(i=0; i<EI_INDENT; i++){
 	  printf("%x ", elf.e_ident[i]);
   }
@@ -89,22 +90,25 @@ int main(int argc, char **argv) {
   printf("\n==============================\n");
 
   
-   Elf32_Off loc = elf.e_shoff;
-   printf("loc is: %d\n",loc);
 	
   if (sec_flag==1){
     printf("Section headers - numer of sections is %d:\n",elf.e_shnum);
-    printf("[Nr] Name            Addr        Size\n");
-    fseek(f1,loc,0);
-    //for(i=0; i<elf.e_shnum; i++){
-    for(i=0; i<5; i++){
-      //fread(f1,res,sizeof(res));
-      fread(&res,sizeof(res),sizeof(res),f1);
-      printf("%x %x\n",res.sh_addr,res.sh_size);
-      loc = loc + res.sh_addr;
-      printf("loc is: %d\n",loc);
-      fseek(f1,res.sh_offset,loc);
-      loc = loc + res.sh_offset;
+    printf("[Nr]  Offset     Size      Type   Name\n");
+    fseek(f1, elf.e_shoff + (elf.e_shentsize * elf.e_shstrndx), SEEK_SET);
+    use = fread(&res, sizeof(res), 1, f1);
+    int nsize = res.sh_size;
+    int noff = res.sh_offset; 
+    char* namesArr = malloc(nsize);
+    fseek(f1, noff, SEEK_SET);
+    use = fread(namesArr, nsize, 1, f1);
+    for(i=0; i<elf.e_shnum-1; i++){
+      fseek(f1, elf.e_shoff + (elf.e_shentsize * i), SEEK_SET);
+      use = fread(&res, sizeof(res), 1, f1);
+      printf("%d:    ",i);
+      if (i<10){
+	printf(" ");
+      }
+      printf("%06x    %06x     %i    %s\n", res.sh_offset, res.sh_size, res.sh_type, namesArr + res.sh_name);
     }
     
     

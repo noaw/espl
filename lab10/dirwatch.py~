@@ -1,4 +1,4 @@
-#!python
+#! /src/bin/python
 
 import os, sys, time
 
@@ -43,6 +43,7 @@ class Dirwatch:
                 # File's mtime has been changed since we last looked at it.
                 if t.st_mtime > mtime:
                     self.changed_list.append(path)
+                    t.st_mtime = mtime
             else:
                 # No recorded modification time, so it must be
                 # a brand new file.

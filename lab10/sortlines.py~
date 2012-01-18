@@ -1,0 +1,14 @@
+#! /src/bin/python
+
+import sys
+
+i = 1
+lines = []
+for line in file(sys.argv[1]):
+	# print "%3d: %s" % (i, line),
+	lines.append(line)
+	#i+= 1
+
+for line in lines:
+	print "%3d: %s" % (i, line),
+	i+= 1

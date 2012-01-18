@@ -5,10 +5,12 @@ import os, sys, time, subprocess
 
 if __name__ == '__main__':
   
-    dirs = sys.argv[2:]
+    if len(sys.argv)>2:
+      dirs = [sys.argv[2]]
+    #dirs = ["."]
     if not dirs:
         dirs = ["."]
-    print "dir: " + dirs + "\n"
+    #print "dir: " + dirs + "\n"
         
     fun = sys.argv[1]
     if not fun:

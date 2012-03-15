@@ -14,9 +14,12 @@ print """
 
 <body>
 """
+addr = "";
 
 form = cgi.FieldStorage()
 command = form.getvalue("command", "")
+
+
 
 print """
   <div>$ %s</div>

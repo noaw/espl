@@ -28,15 +28,15 @@ print """
 
 """ % shlex.split(command)
 
+
 print """
   <div>$ %s</div>
 </body>
 
-</html>
-""" % shlex.split(command)
+</html> 
+""" % subprocess.check_output(command,shell=True)
 
 
-if len(command) > 1:
-  line = "cd "+command[0]
-  out = subprocess.check_output(line,shell=True)
+
+
 

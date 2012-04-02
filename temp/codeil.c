@@ -33,39 +33,52 @@
 
 // copies str2 to str1
 char **str_cpy(char** str1, char* str2){
-  //puts(str2);
   char **temp = str1;
   while (*str2!='\0'){
-    //printf("%c\n",*str2);
     *temp++ = str2++;
-    //printf("%c\n",*str2);
   }
-  *temp++;
-  *temp = '\0';
+  //*temp++;
+  //*temp = '\0';
   return str1;
 }
 
 
 char **str_cat(char** str1, char* str2){
-  char *ans[10000];
   int i = 0;
-  char **temp = str1;
-  //while (**temp!='\0'){
-  while (*temp!='\0'){
-    //puts(str2);
-    //printf("%c",**temp);
-    //printf("%d\n",i);
-    //i++;
-    *ans[i] = **temp;
-    i++;
-    *temp++;
-  }
-  printf("hello");
-  printf("%s\n",*ans);
-  //while(*str1++ == str2++);
+  char **temp = str1 + 4*strlen(*str1);
+  printf("hello\n");
+ printf("temp:%s\n",*temp);
+ printf("str1:%s\n",*str1);
+ 
+  while (*str2!='\0'){
+	printf("from str2:%c\n",*str2);
+	// *temp++ = str2++;
+	**temp = *str2;
+	*temp++;
+	str2++;
+	}
+ 
+  printf("str1:%s\n",*str1);
+  printf("str2:%s\n",str2);
+  printf("temp:%s\n",*temp);
   
+  for (i = 0; i<4; i++){
+	/*printf("%d, -%c-\n",i,**temp);
+	if (**temp=='\0')
+		printf("space!");
+	printf("%d, -%s-\n",i,*temp);
+	*/
+	*temp--;
+	}
+	printf("%s\n",*temp);
+  //printf("%s\n",*ans);
+  //while(*str1++ == str2++);s
+  
+  //**temp = **(temp+size-1);
+  //**(temp+size-3) = 'a';
+  
+  //str_cpy(temp,str2);
   /*
-  str_cpy(temp,str2);
   printf("back to strcat\n");
   while (*(temp+1)!='\0'){
     printf("%c\n",**temp);
@@ -85,14 +98,14 @@ char **str_cat(char** str1, char* str2){
   }
   */
   //*temp = '\0';
-  temp = ans;
-  return temp;
+  printf("\n");
+  return str1;
 }
 
 int main(int argc, char *argv[])
 {
     char *s = NULL;
-    str_cpy(&s, "That This");
+    str_cpy(&s, "That Thmp");
     puts(s);
     str_cpy(&s, s+5);
     puts(s);

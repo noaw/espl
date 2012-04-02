@@ -1,0 +1,581 @@
+K 25
+svn:wc:ra_dav:version-url
+V 21
+/svn/!svn/ver/1/trunk
+END
+traps.h
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/1/trunk/traps.h
+END
+usertests.c
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/1/trunk/usertests.c
+END
+console.c
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/1/trunk/console.c
+END
+printf.c
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/1/trunk/printf.c
+END
+init.c
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/init.c
+END
+kalloc.c
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/1/trunk/kalloc.c
+END
+bootmain.c
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/1/trunk/bootmain.c
+END
+wc.c
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/svn/!svn/ver/1/trunk/wc.c
+END
+elf.h
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/1/trunk/elf.h
+END
+mp.c
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/svn/!svn/ver/1/trunk/mp.c
+END
+stressfs.c
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/1/trunk/stressfs.c
+END
+runoff
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/runoff
+END
+BUGS
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/svn/!svn/ver/1/trunk/BUGS
+END
+show1
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/1/trunk/show1
+END
+mp.h
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/svn/!svn/ver/1/trunk/mp.h
+END
+cuth
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/svn/!svn/ver/1/trunk/cuth
+END
+user.h
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/user.h
+END
+zombie.c
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/1/trunk/zombie.c
+END
+trapasm.S
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/1/trunk/trapasm.S
+END
+runoff.list
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/1/trunk/runoff.list
+END
+lapic.c
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/1/trunk/lapic.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/1/trunk/Makefile
+END
+kernel.ld
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/1/trunk/kernel.ld
+END
+mkfs.c
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/mkfs.c
+END
+forktest.c
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/1/trunk/forktest.c
+END
+ioapic.c
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/1/trunk/ioapic.c
+END
+param.h
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/1/trunk/param.h
+END
+sleep1.p
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/1/trunk/sleep1.p
+END
+runoff.spec
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/1/trunk/runoff.spec
+END
+fs.c
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/svn/!svn/ver/1/trunk/fs.c
+END
+spinp
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/1/trunk/spinp
+END
+swtch.S
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/1/trunk/swtch.S
+END
+gdbutil
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/1/trunk/gdbutil
+END
+bio.c
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/1/trunk/bio.c
+END
+ln.c
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/svn/!svn/ver/1/trunk/ln.c
+END
+pr.pl
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/1/trunk/pr.pl
+END
+fs.h
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/svn/!svn/ver/1/trunk/fs.h
+END
+initcode.S
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/1/trunk/initcode.S
+END
+rm.c
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/svn/!svn/ver/1/trunk/rm.c
+END
+vm.c
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/svn/!svn/ver/1/trunk/vm.c
+END
+exec.c
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/exec.c
+END
+x86.h
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/1/trunk/x86.h
+END
+umalloc.c
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/1/trunk/umalloc.c
+END
+pipe.c
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/pipe.c
+END
+grep.c
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/grep.c
+END
+runoff1
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/1/trunk/runoff1
+END
+memide.c
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/1/trunk/memide.c
+END
+kbd.c
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/1/trunk/kbd.c
+END
+ide.c
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/1/trunk/ide.c
+END
+mmu.h
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/1/trunk/mmu.h
+END
+kbd.h
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/1/trunk/kbd.h
+END
+string.c
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/1/trunk/string.c
+END
+Notes
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/1/trunk/Notes
+END
+types.h
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/1/trunk/types.h
+END
+syscall.c
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/1/trunk/syscall.c
+END
+sh.c
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/svn/!svn/ver/1/trunk/sh.c
+END
+fcntl.h
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/1/trunk/fcntl.h
+END
+TRICKS
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/TRICKS
+END
+echo.c
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/echo.c
+END
+syscall.h
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/1/trunk/syscall.h
+END
+stat.h
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/stat.h
+END
+toc.hdr
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/1/trunk/toc.hdr
+END
+memlayout.h
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/1/trunk/memlayout.h
+END
+spinlock.c
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/1/trunk/spinlock.c
+END
+usys.S
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/usys.S
+END
+spinlock.h
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/1/trunk/spinlock.h
+END
+sign.pl
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/1/trunk/sign.pl
+END
+kill.c
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/kill.c
+END
+toc.ftr
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/1/trunk/toc.ftr
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/1/trunk/LICENSE
+END
+sysproc.c
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/1/trunk/sysproc.c
+END
+symlink.patch
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/1/trunk/symlink.patch
+END
+proc.c
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/proc.c
+END
+mkdir.c
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/1/trunk/mkdir.c
+END
+trap.c
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/trap.c
+END
+cat.c
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/1/trunk/cat.c
+END
+proc.h
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/proc.h
+END
+uart.c
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/uart.c
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/README
+END
+ls.c
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/svn/!svn/ver/1/trunk/ls.c
+END
+sysfile.c
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/1/trunk/sysfile.c
+END
+vectors.pl
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/1/trunk/vectors.pl
+END
+file.c
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/file.c
+END
+timer.c
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/1/trunk/timer.c
+END
+buf.h
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/1/trunk/buf.h
+END
+log.c
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/1/trunk/log.c
+END
+entry.S
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/1/trunk/entry.S
+END
+entryother.S
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/1/trunk/entryother.S
+END
+file.h
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/file.h
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/main.c
+END
+bootasm.S
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/1/trunk/bootasm.S
+END
+asm.h
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/1/trunk/asm.h
+END
+defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/defs.h
+END
+dot-bochsrc
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/1/trunk/dot-bochsrc
+END
+picirq.c
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/1/trunk/picirq.c
+END
+ulib.c
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/1/trunk/ulib.c
+END
